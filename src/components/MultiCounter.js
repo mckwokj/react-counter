@@ -8,7 +8,7 @@ const MultiCounter = () => {
 
   const [sum, setSum] = useState(0)
 
-  function updateCounterSize(counterSize) {
+  const updateCounterSize = (counterSize) => {
     setSize(counterSize)
     setSum(0)
   }
