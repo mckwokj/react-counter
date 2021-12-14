@@ -1,17 +1,9 @@
 import Counter from "./Counter"
 
-const CounterGroup = (props) => {
-  const increase = () => {
-    props.increase()
-  }
-
-  const decrease = () => {
-    props.decrease()
-  }
-  
+const CounterGroup = (props) => {  
   return (
     <div>
-      { Array(props.size).fill().map((counter, index) => (<Counter key={index} increase={increase} decrease={decrease}></Counter>))}
+      { Array(props.size).fill().map((counter, index) => (<Counter key={index}></Counter>))}
     </div>
     )
   }

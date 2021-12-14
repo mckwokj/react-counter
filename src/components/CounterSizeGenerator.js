@@ -1,16 +1,14 @@
-import { useState } from "react"
-import { useDispatch } from "react-redux"
-import { UPDATE_SIZE } from "../constants/constants";
+import { useDispatch, useSelector } from "react-redux"
+import { RESET_SUM, UPDATE_SIZE } from "../constants/constants";
 
 const CounterSizeGenerator = (props) => {
-  const [size, setSize] = useState(0)
   const dispatch = useDispatch();
+  const size = useSelector(state => state.size)
 
   const handleChangeSize = (event) => {
     const sizeValue = event.target.value > 0 && event.target.value <= 100 ? parseInt(event.target.value) : 0
-    setSize(sizeValue)
     dispatch({type: UPDATE_SIZE, payload: sizeValue})
-    // props.updateCounterSize(sizeValue)
+    dispatch({type: RESET_SUM})
   }
 
   return (
