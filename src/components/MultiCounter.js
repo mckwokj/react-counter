@@ -1,31 +1,17 @@
 import CounterGroup from "./CounterGroup";
 import CounterSizeGenerator from "./CounterSizeGenerator";
-import { useState } from "react"
 import CounterGroupSum from "./CounterGroupSum";
 import { useSelector } from "react-redux";
 
 const MultiCounter = () => {
   const size = useSelector(state => state.size)
-
-  const [sum, setSum] = useState(0)
-
-  const updateCounterSize = (counterSize) => {
-    setSum(0)
-  }
-
-  const increase = () => {
-    setSum(sum + 1)
-  }
-
-  const decrease = () => {
-    setSum(sum - 1)
-  }
+  const sum = useSelector(state => state.sum)
 
   return(
     <>
-      <CounterSizeGenerator updateCounterSize={updateCounterSize}></CounterSizeGenerator>
+      <CounterSizeGenerator></CounterSizeGenerator>
       <CounterGroupSum sum={sum} />
-      <CounterGroup size={size} increase={increase} decrease={decrease}/>
+      <CounterGroup size={size}/>
     </>
   )
 }
