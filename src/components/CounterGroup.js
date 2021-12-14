@@ -1,7 +1,6 @@
 import Counter from "./Counter"
-import { useMemo } from "react"
 
-function CounterGroup(props) {
+const CounterGroup = (props) => {
   const increase = () => {
     props.increase()
   }

@@ -1,4 +1,4 @@
-function CounterGroupSum(props) {
+const CounterGroupSum = (props) => {
   return (
     <div>
       Sum: {props.sum}

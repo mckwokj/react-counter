@@ -3,7 +3,7 @@ import CounterSizeGenerator from "./CounterSizeGenerator";
 import { useState } from "react"
 import CounterGroupSum from "./CounterGroupSum";
 
-function MultiCounter() {
+const MultiCounter = () => {
   const [size, setSize] = useState(0)
 
   const [sum, setSum] = useState(0)

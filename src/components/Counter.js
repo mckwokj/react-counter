@@ -1,14 +1,14 @@
 import { useState } from "react"
 
-function Counter(props) {
+const Counter = (props) => {
   const [number, setNumber] = useState(0);  
 
-  function increase() {
+  const increase = () => {
     setNumber(number+1);
     props.increase();
   }
 
-  function decrease() {
+  const decrease = () => {
     setNumber(number-1);
     props.decrease();
   }
